@@ -1,9 +1,18 @@
 "use-strict";
 
 let findBestEmployee = employees => {
-  for (const key of Object.keys(employees)) {
-    if (employees[key] === Math.max(...Object.values(employees))) return key;
+  let names = Object.keys(employees);
+
+  let maxNumber = 0;
+  let maxName;
+
+  for (const name of names) {
+    if (employees[name] > maxNumber) {
+      maxNumber = employees[name];
+      maxName = name;
+    }
   }
+  return maxName;
 };
 
 console.log(

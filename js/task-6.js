@@ -2,8 +2,9 @@
 
 let calculateTotalPrice = (arr, productName) => {
   for (const item in arr) {
-    const { name, ...rest } = arr[item];
-    if (productName === name) return rest.price * rest.quantity;
+    if (arr[item].name === productName) {
+      return arr[item].price * arr[item].quantity
+    }
   }
 };
 

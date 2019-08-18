@@ -1,10 +1,15 @@
 "use strict";
 
-let getAllPropValues = (arr, prop) => {
-  let newArr = [];
-  for (const item in arr) newArr.push(arr[item][prop]);
-  return newArr;
-};
+function getAllPropValues(arr, prop) {
+  let values = [];
+
+  for (const item in arr) {
+    if (prop in arr[item]) {
+      values.push(arr[item][prop]);
+    }
+  }
+  return values;
+}
 
 const products = [
   { name: "Радар", price: 1300, quantity: 4 },
